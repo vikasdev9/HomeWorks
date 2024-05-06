@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>Accept a payment</title>
+    <meta name="description" content="A demo of a payment on Stripe" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" href="/checkout.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/Paymentcss/checkout.css"
+      th:href="@{../css/Paymentcss/checkout.css}"
+    />
+    <script th:src="@{https://js.stripe.com/v3/}"></script>
+
+    <script th:inline="javascript">
+      /*<![CDATA[*/
+
+      var publicKey = /*[[${publicKey}]]*/ ""; // Replace
+      var amount = /*[[${amount}]]*/ "";
+      var email = /*[[${email}]]*/ "";
+      // var productName = "${productName}";
+
+      /*]]>*/
+    </script>
+
+    <script th:src="@{../js/checkout.js}" defer></script>
+  </head>
+  <body>
+    <!-- Display a payment form -->
+    <form id="payment-form">
+      <h2>Powered By: HomeWork</h2>
+      <span>You are about to make a payment : </span>
+      <span th:text="*{amount}" style="font-weight: bold"></span>
+      <span style="font-weight: bold">Rupees</span>
+      <div id="link-authentication-element"></div>
+      <div id="payment-element"></div>
+      <button id="submit">
+        <div class="spinner hidden" id="spinner"></div>
+        <span id="button-text">Pay now</span>
+      </button>
+      <div id="payment-message" class="hidden"></div>
+    </form>
+  </body>
+</html>

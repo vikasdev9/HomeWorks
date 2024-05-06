@@ -1,0 +1,236 @@
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+ }
+ .container {
+   position: relative;
+  
+   background: #fff;
+   padding: 25px;
+   border-radius: 8px;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+   align-items: center;
+ }
+
+ .container header {
+   color: #9100FF;
+   font-size: 2.5rem;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+   text-align: center;
+   margin-bottom: 5px;
+ }
+
+ .backbtn {
+   text-align: end;
+   margin: 30px;
+ }
+
+ .backbtn a {
+   text-decoration: none;
+   color: #9100FF;
+   font-size: 20px;
+   text-decoration: solid;
+   font-weight: bolder;
+   line-height: normal;
+ }
+ .profile-img {
+   width: 180px;
+   height: 180px;
+   border-radius: 1000px;
+   /* position: absolute; */
+   margin-top: 20px;
+   left: 50%;
+   transform: translateY(-50%, -50%);
+   border: 6px solid #fff;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+ }
+
+ .container .form {
+   margin-top: 30px;
+ }
+
+ .form .input-box {
+   width: 100%;
+   margin-top: 20px;
+ }
+
+ .input-box label {
+   color: #333;
+ }
+
+ profile-img img {
+   width: 130px;
+   height: 130px;
+   border-radius: 50%;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   border: 4px solid #fff;
+
+ }
+
+ .form :where(.input-box input, .select-box) {
+   position: relative;
+   height: 50px;
+   width: 100%;
+   outline: none;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   padding: 0 15px;
+   font-size: 1rem;
+   color: #707070;
+   margin-top: 8px;
+ }
+
+ .input-box input:focus {
+   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+ }
+
+ .form .column {
+   display: flex;
+   column-gap: 15px;
+ }
+
+ .form :where(.gender-option, .gender) {
+   display: flex;
+   align-items: center;
+   column-gap: 50px;
+   flex-wrap: wrap;
+ }
+
+ .form .gender {
+   column-gap: 5px;
+   cursor: pointer;
+ }
+
+ .gender input {
+   accent-color: rgb(130, 106, 251);
+ }
+
+ .form :where(.gender input, .gender label) {
+   cursor: pointer;
+ }
+
+ .gender label {
+   color: #707070;
+ }
+
+ .form .gender-box {
+   margin-top: 20px;
+ }
+
+ .gender-box h3 {
+   color: #333;
+   font-size: 1rem;
+   font-weight: 400;
+   margin-bottom: 8px;
+ }
+
+ .select-box select {
+   height: 100%;
+   width: 100%;
+   outline: none;
+   border: none;
+   color: #707070;
+   font-size: 1rem;
+ }
+
+ .addres :where(input, .select-box) {
+   margin-top: 15px;
+ }
+
+ .form button {
+   height: 55px;
+   width: 100%;
+   color: #fff;
+   font-size: 1rem;
+   border: none;
+   margin-top: 30px;
+   cursor: pointer;
+   border-radius: 6px;
+   font-weight: 400;
+   background: #1C1C1C;
+   box-shadow: 4px 4px 10px 0px rgba(145, 0, 255, 0.40);
+   transition: all 0.2s ease;
+ }
+
+ .form button:hover {
+   background-color: #9100FF;
+ }
+
+ .input-box .addr {
+   color: #9100FF;
+   font-size: 1.2rem;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+   margin-top: 30px;
+   margin-bottom: 20px;
+ }
+
+ .form .addr {
+   color: #9100FF;
+   font-size: 1.2rem;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+   margin-top: 30px;
+   margin-bottom: 20px;
+ }
+
+ .alert p {
+   font-size: 14px;
+   font-style: italic;
+   color: dimgray;
+   margin: 5px 0;
+   padding: 10px;
+ }
+
+ .alert a {
+   text-decoration: none;
+   color: #9100FF;
+ }
+
+ .alert a:hover {
+   text-decoration: underline;
+   color: #1C1C1C;
+ }
+
+ /* Responsive */
+ @media screen and (max-width:500px) {
+   .form .column {
+     flex-wrap: wrap;
+   }
+
+   .form :where(.gender-option, .gender) {
+     row-gap: 15px;
+   }
+
+   .form button:hover {
+     background-color: #9100FF;
+   }
+
+   .form button {
+     height: 55px;
+     width: 100%;
+     color: #fff;
+     font-size: 1rem;
+     border: none;
+     margin-top: 30px;
+     cursor: pointer;
+     border-radius: 6px;
+     font-weight: 400;
+     background: #1C1C1C;
+     box-shadow: 4px 4px 10px 0px rgba(145, 0, 255, 0.40);
+     transition: all 0.2s ease;
+   }
+
+   .profile {
+     text-align: center;
+   }
+ }

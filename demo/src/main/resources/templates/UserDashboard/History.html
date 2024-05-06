@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/UserDashboardCss/Userdashboard.css"
+      th:href="@{../css/UserDashboardCss/Userdashboard.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      flex
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+      integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <th:block
+      th:insert="~{UserDashboard/sidemenu ::  UserdbheaderFragment(option=${session.option})}"
+    />
+    <section style="width: 100%">
+      <h3 class="i-name">History</h3>
+
+      <div class="board">
+        <table>
+          <thead>
+            <tr>
+              <td>Worker Name</td>
+              <td>Email Id</td>
+              <td>Service</td>
+              <td>Paid</td>
+              <td>Download</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each=" h1: ${history}">
+              <td class="people">
+                <img th:src="@{../images/vikas.png}" alt="img" />
+                <div class="people-de">
+                  <h5 th:text="${h1.getWorkerName()}"></h5>
+                </div>
+                
+              </td>
+
+              <td class="people-des">
+                <p th:text="${h1.getSetWorkerEmailId()}"></p>
+              </td>
+
+              <td class="active">
+                <p th:text="${h1.getService_Name()}"></p>
+              </td>
+
+              <td class="role">
+                <p th:text="${h1.getMoney_Charge()}"></p>
+              </td>
+
+              <td class="edit">
+              <button type="submit" class="invoice" th:attr="onclick=|InVoice('${h1.getSetWorkerEmailId()}','${h1.getService_Name()}')|">
+              <i class="fa-solid fa-receipt" style="margin-right: 5px;"></i></i>Invoice
+            </button>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <script>
+      $("#menu-btn").click(function () {
+        $("#menu").toggleClass("active");
+      });
+    </script>
+    <script>
+      function InVoice(InVoicedetail,ServiceName) {
+        console.log(InVoicedetail);
+        window.location.href =
+          "http://localhost:2000/userinvoice?InVoicedetail=" +
+          InVoicedetail+"&ServiceName="+ServiceName;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,700;1,600;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+.container {
+  width: 70%;
+  margin: 3% 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  box-shadow: 0 10px 12px rgba(54, 176, 138, 0.005);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.big-heading {
+  font-family: "Poppins", sans-serif;
+  color: #9100FF;
+  font-size: 20px;
+ margin-top: 20px;
+ margin-left: 20px;
+}
+
+
+.button-container {
+  display: flex;
+  align-items: center;
+  margin: 4% 0;
+}
+
+.text-fields {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 2%;
+  margin: 0 2%;
+  width: 46%;
+  border-radius: 4px;
+  color: #84848d;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: inherit;
+  color: #84848d;
+  width: 200%;
+  margin-left: 4%;
+  font-size: 1rem;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url('bx-cake.svg') no-repeat;
+  height: 20px;
+  width: 20px;
+}
+
+.text-fields.Service_Name:after {
+  content: 'Service_Name';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -210px;
+  width: 334px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.Hours:after {
+  content: 'Hours';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -210px;
+  width: 302px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.money:after {
+  content: 'money';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -205px;
+  width: 342px;
+  color: #696cff;
+  top: -33px;
+}
+
+
+.text-fields.Available:after {
+  content: 'Available';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -205px;
+  width: 342px;
+  color: #696cff;
+  top: -33px;
+}
+
+
+.text-fields.Description:after {
+  content: 'Description';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -205px;
+  width: 342px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.experience:after {
+  content: 'Experience';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -205px;
+  width: 342px;
+  color: #696cff;
+  top: -33px;
+}
+
+input[type="radio"] {
+  accent-color: #696cff;
+  margin-right: 0%;
+}
+
+.pagination-btns {
+  display: flex;
+  justify-content: center;
+  margin: 3% 0;
+  padding: 0 4%;
+}
+
+.nextPage,
+.previousPage {
+  background-color:#9100FF ;
+  color: #fff;
+  width: 45%;
+  cursor: pointer;
+  padding: 2%;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+.nextPage:hover,
+.previousPage:hover {
+  background: #000;
+}
+
+
+
+.error {
+  border: 1px solid red;
+  color: red;
+}
+
+.login-form-contents .text-fields {
+  margin: 3% 2%;
+  width: 70%;
+  padding: 3%;
+}
+
+.login-form-contents .text-fields.email:after {
+  left: -323px;
+}
+
+.login-form-contents .text-fields.password:after {
+  left: -294px;
+}

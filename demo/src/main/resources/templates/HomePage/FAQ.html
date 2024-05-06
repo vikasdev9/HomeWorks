@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/HomePageCss/FAQ.css"
+      th:href="@{../css/HomePageCss/FAQ.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/HomePageCss/sers.css"
+      th:href="@{../css/HomePageCss/sers.css}"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/HomePageCss/style.css"
+      th:href="@{/css/HomePageCss/style.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/HomePageCss/style.css"
+      th:href="@{/css/HomePageCss/style.css}"
+    />
+    <!-- ===== Fontawesome CDN Link ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" type="text/css"
+    th:href="@{/css/HomePageCss/style.css}"
+  </head>
+  <body>
+    <th:block th:insert="~{HomePage/header :: headerFragment}" />
+    <section>
+      <h2 class="title">FAQ</h2>
+      <div class="faq">
+        <div class="question">
+          <h3>How do I book a service on the home service platform?</h3>
+          <svg width="15" height="10" viewBox="0 0 42 25">
+            <path
+              d="M3 3L21 21L39 3"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="answer">
+          <p>
+            To book a service, simply log in to your account, browse the
+            available service categories, select the desired service, choose a
+            preferred date and time, and complete the booking process. You'll
+            receive a confirmation once the booking is confirmed.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="question">
+          <h3>
+            Can I schedule recurring maintenance tasks through the platform?
+          </h3>
+          <svg width="15" height="10" viewBox="0 0 42 25">
+            <path
+              d="M3 3L21 21L39 3"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="answer">
+          <p>
+            Yes, you can schedule recurring maintenance tasks by selecting the
+            option for recurring appointments during the booking process. You
+            can specify the frequency and duration of the recurring appointments
+            according to your needs.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="question">
+          <h3>How are service providers vetted for reliability and quality?</h3>
+          <svg width="15" height="10" viewBox="0 0 42 25">
+            <path
+              d="M3 3L21 21L39 3"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="answer">
+          <p>
+            Service providers undergo a rigorous vetting process, including
+            background checks, verification of licenses and certifications, and
+            review of customer feedback and ratings. Only qualified and
+            reputable service providers are approved to offer services on our
+            platform.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="question">
+          <h3>How are pricing and payment handled for the services?</h3>
+          <svg width="15" height="10" viewBox="0 0 42 25">
+            <path
+              d="M3 3L21 21L39 3"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="answer">
+          <p>
+            Pricing for services is determined by the service providers and
+            displayed on their service listings. Payment is typically processed
+            securely through the platform, and you may have the option to pay
+            online or in-person directly to the service provider upon completion
+            of the service.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="question">
+          <h3>
+            Can I communicate directly with service providers before booking?
+          </h3>
+          <svg width="15" height="10" viewBox="0 0 42 25">
+            <path
+              d="M3 3L21 21L39 3"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="answer">
+          <p>
+            Yes, you can communicate directly with service providers through the
+            platform's Contact Number. This allows you to discuss specific
+            requirements, ask questions, and clarify any details before
+            finalizing your booking.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="question">
+          <h3>
+            Are there any additional fees or hidden charges for using the
+            platform?
+          </h3>
+          <svg width="15" height="10" viewBox="0 0 42 25">
+            <path
+              d="M3 3L21 21L39 3"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="answer">
+          <p>
+            We strive to be transparent about pricing, and there are typically
+            no additional fees or hidden charges for using the platform. The
+            price you see on the service listings is the price you'll pay,
+            unless otherwise specified by the service provider.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    const faqs = document.querySelectorAll(".faq");
+
+    faqs.forEach((faq) => {
+      faq.addEventListener("click", () => {
+        faq.classList.toggle("active");
+      });
+    });
+  </script>
+</html>

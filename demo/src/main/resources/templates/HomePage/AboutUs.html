@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/HomePageCss/AboutUs.css"
+      th:href="@{../css/HomePageCss/AboutUs.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/HomePageCss/sers.css"
+      th:href="@{../css/HomePageCss/sers.css}"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/HomePageCss/style.css"
+      th:href="@{/css/HomePageCss/style.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/HomePageCss/style.css"
+      th:href="@{/css/HomePageCss/style.css}"
+    />
+    <!-- ===== Fontawesome CDN Link ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" type="text/css"
+    th:href="@{/css/HomePageCss/style.css}"
+  </head>
+  <body>
+    <th:block th:insert="~{HomePage/header :: headerFragment}" />
+    <section class="hero">
+      <div class="heading">
+        <h1>About Us</h1>
+      </div>
+      <div class="heading2">
+        <h1>Our Mission</h1>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <h2>Welcome To Our Website</h2>
+          <p>
+            At Homework, our mission is to revolutionize the way people access
+            and experience home services. We strive to provide a seamless
+            platform that connects homeowners with skilled professionals, making
+            the process of booking and receiving quality services effortless.
+            Our aim is to simplify and streamline home improvements, repairs,
+            and maintenance, ensuring that every task, no matter how small, is
+            handled with utmost care and expertise. We are dedicated to
+            delivering a superior customer experience, focusing on reliability,
+            convenience, and customer satisfaction. Through our commitment to
+            innovation and excellence, we aim to be a trusted go-to platform for
+            all home service needs, empowering homeowners to enhance their
+            living spaces with ease and confidence.
+          </p>
+        </div>
+        <div class="hero-image">
+          <img th:src="@{../images/trust.jpg}" alt="" />
+        </div>
+      </div>
+
+      <div class="container" style="margin-top: 20px">
+        <div class="hero-image">
+          <img th:src="@{../images/whywe.jpg}" alt="" />
+        </div>
+        <div class="hero-content">
+          <h2>Who are we?</h2>
+          <p>
+            We are a team of dedicated professionals on a mission to transform
+            the way homeowners experience home services. We understand that
+            finding reliable and skilled professionals for various home projects
+            can be a daunting task. That's why, we have created a platform that
+            connects homeowners with trusted and verified experts effortlessly
+            and efficiently. Our goal is to provide homeowners with a seamless
+            and convenient solution for all their home service needs. With our
+            user-friendly platform, you can easily browse through a wide range
+            of services, compare professionals, and book appointments that suit
+            your schedule. We take pride in our carefully curated network of
+            skilled workers who are committed to delivering exceptional services
+            and exceeding customer expectations. At Homework, we prioritize
+            transparency, reliability, and customer satisfaction. We are
+            passionate about creating a positive and stress-free experience for
+            homeowners, ensuring that every task, from small repairs to major
+            renovations, is handled with professionalism and expertise. Join us
+            and discover the ease and peace of mind that comes with choosing
+            Homework for your home service needs.
+          </p>
+          <button class="cta-button">
+            <a
+              th:href="@{/ContactUs}"
+              class="cta-button"
+              style="text-decoration: none; color: #fff"
+              >Contact Us</a
+            >
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

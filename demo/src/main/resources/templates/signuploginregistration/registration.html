@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Step Form</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/signuploginregisteration/style.css"
+      th:href="@{../css/signuploginregisteration/style.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+      integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-link">
+        <div class="logo">
+          <div>
+            <img
+              th:src="@{../images/homework logo img.png}"
+              alt="homeWork logo"
+              style="
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-top: 5px;
+                margin-left: 14px;
+              "
+            />
+          </div>
+          <div>
+            <span class="text"
+              >Home<span style="color: #000000">W</span>ork</span
+            >
+          </div>
+        </div>
+        <p class="side-big-heading">Create your Account</p>
+
+        <p class="primary-bg-text">
+          To keep track on your dashboard please login with your personal info
+        </p>
+        <a th:href="@{/login}" class="loginbtn">Login now</a>
+      </div>
+      <form
+        id="signupForm"
+        th:action="@{/submitregistration}"
+        method="post"
+        class="sign-form-container"
+        th:object="${signUpLoginModel}"
+      >
+        <p class="big-heading">Create Account</p>
+        <div style="display: flex; justify-content: end; align-items: end">
+          <p class="backbtn" style="text-align: end">
+            <box-icon
+              name="arrow-back"
+              style="margin-right: 5px; align-self: center"
+            ></box-icon
+            ><a th:href="@{/home}" style="text-align: end">Back To Dashborad</a>
+          </p>
+        </div>
+        <div class="progress-bar">
+          <div class="stage">
+            <p class="tool-tip">Personal info</p>
+            <p class="stageno stageno-1">1</p>
+          </div>
+          <div class="stage">
+            <p class="tool-tip">Address info</p>
+            <p class="stageno stageno-2">2</p>
+          </div>
+          <div class="stage">
+            <p class="tool-tip">final submit</p>
+            <p class="stageno stageno-3">3</p>
+          </div>
+        </div>
+        <div class="signup-form-content">
+          <!-- Personal info -->
+          <div class="stage1-content">
+            <div class="button-container">
+              <div class="text-fields fname">
+                <label for="fname"><box-icon name="user"></box-icon></label>
+                <input
+                  type="text"
+                  name="FullName"
+                  id="fname"
+                  th:value="${signUpLoginModel.FullName}"
+                  th:classappend="${#fields.hasErrors('FullName')} ? '' : ''"
+                  placeholder="Enter your full name"
+                />
+              </div>
+              <div class="text-fields email">
+                <label for="email"><box-icon name="envelope"></box-icon></label>
+                <input
+                  type="email"
+                  name="EmailId"
+                  id="email"
+                  th:value="${signUpLoginModel.EmailId}"
+                  th:classappend="${#fields.hasErrors('EmailId')} ? '' : ''"
+                  placeholder="Enter your Email Address"
+                />
+              </div>
+            </div>
+            <div class="button-container">
+              <div class="validation">
+                <p
+                  th:each=" e:${#fields.errors('FullName')}"
+                  th:text="${e}"
+                  th:classappend="${#fields.hasErrors('FullName')} ? 'error' : ''"
+                ></p>
+              </div>
+              <div class="validation">
+                <p
+                  th:each=" e:${#fields.errors('EmailId')}"
+                  th:text="${e}"
+                  th:classappend="${#fields.hasErrors('EmailId')} ? 'error' : ''"
+                ></p>
+              </div>
+            </div>
+
+            <div class="button-container">
+              <div class="text-fields phone">
+                <label for="phone"><box-icon name="phone"></box-icon></label>
+                <input
+                  type="text"
+                  name="Phone_Number"
+                  id="phone"
+                  th:value="${signUpLoginModel.Phone_Number}"
+                  th:classappend="${#fields.hasErrors('Phone_Number')} ? '' : ''"
+                  placeholder="phone number"
+                />
+              </div>
+              <div class="text-fields password">
+                <label for="password"
+                  ><box-icon name="lock-alt"></box-icon
+                ></label>
+                <input
+                  type="password"
+                  name="Password"
+                  id="password"
+                  th:value="${signUpLoginModel.Password}"
+                  th:classappend="${#fields.hasErrors('Password')} ? '' : ''"
+                  placeholder="Enter password"
+                />
+              </div>
+            </div>
+
+            <div class="button-container">
+              <div class="validation">
+                <p
+                  th:each=" e:${#fields.errors('Phone_Number')}"
+                  th:text="${e}"
+                  th:classappend="${#fields.hasErrors('Phone_Number')} ? 'error' : ''"
+                ></p>
+              </div>
+              <div class="validation">
+                <p
+                  th:each=" e:${#fields.errors('Password')}"
+                  th:text="${e}"
+                  th:classappend="${#fields.hasErrors('Password')} ? 'error' : ''"
+                ></p>
+              </div>
+            </div>
+
+            <div class="button-container">
+              <div class="gender-selection">
+                <p class="field-heading">Gender :</p>
+                <label for="male"
+                  ><input
+                    type="radio"
+                    name="Gender"
+                    id="male"
+                    value="Male"
+                    th:value="${signUpLoginModel.Gender}"
+                    th:classappend="${#fields.hasErrors('Gender')} ? 'error' : ''"
+                  />Male</label
+                >
+                <label for="Female"
+                  ><input
+                    type="radio"
+                    name="Gender"
+                    id="female"
+                    value="female"
+                    th:value="${signUpLoginModel.gender}"
+                    th:classappend="${#fields.hasErrors('Gender')} ? 'error' : ''"
+                  />Female</label
+                >
+              </div>
+            </div>
+            <div class="button-container">
+              <div class="validation">
+                <p
+                  th:each=" e:${#fields.errors('Gender')}"
+                  th:text="${e}"
+                  th:classappend="${#fields.hasErrors('Gender')} ? 'error' : ''"
+                ></p>
+              </div>
+            </div>
+            <div class="pagination-btns">
+              <input
+                type="submit"
+                value="Next"
+                class="nextPage stagebtn1b"
+                onclick="stage1to2()"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="stage2-content">
+          <!-- Address info -->
+          <div class="button-container">
+            <div class="text-fields address">
+              <label for="address"><box-icon name="map"></box-icon></label>
+              <input
+                type="text"
+                name="Street_Address"
+                id="address"
+                th:value="${signUpLoginModel.Street_Address}"
+                th:classappend="${#fields.hasErrors('Street_Address')} ? 'error' : ''"
+                placeholder="Enter your Street Address"
+              />
+            </div>
+            <div class="text-fields Town">
+              <label for="Town"><box-icon name="map"></box-icon></label>
+              <input
+                type="text"
+                name="Town_Area"
+                id="Town"
+                th:value="${signUpLoginModel.Town_Area}"
+                th:classappend="${#fields.hasErrors('Town_Area')} ? 'error' : ''"
+                placeholder="Enter Town Area"
+              />
+            </div>
+          </div>
+
+          <div class="button-container">
+            <div class="validation">
+              <p
+                th:each=" e:${#fields.errors('Street_Address')}"
+                th:text="${e}"
+                th:classappend="${#fields.hasErrors('Town_Area')} ? 'error' : ''"
+              ></p>
+            </div>
+            <div class="validation">
+              <p
+                th:each=" e:${#fields.errors('Town_Area')}"
+                th:text="${e}"
+                th:classappend="${#fields.hasErrors('Town_Area')} ? 'error' : ''"
+              ></p>
+            </div>
+          </div>
+
+          <div class="button-container">
+            <div class="text-fields district">
+              <label for="district"><box-icon name="map"></box-icon></label>
+              <input
+                type="text"
+                name="District"
+                id="district"
+                th:value="${signUpLoginModel.District}"
+                th:classappend="${#fields.hasErrors('District')} ? 'error' : ''"
+                placeholder=" Enter your District"
+              />
+            </div>
+            <div class="text-fields City">
+              <label for="City"><box-icon name="map"></box-icon></label>
+              <input
+                type="text"
+                name="City"
+                id="City"
+                th:value="${signUpLoginModel.City}"
+                th:classappend="${#fields.hasErrors('City')} ? 'error' : ''"
+                placeholder="Enter your City"
+              />
+            </div>
+          </div>
+
+          <div class="button-container">
+            <div class="validation">
+              <p
+                th:each=" e:${#fields.errors('District')}"
+                th:text="${e}"
+                th:classappend="${#fields.hasErrors('District')} ? 'error' : ''"
+              ></p>
+            </div>
+            <div class="validation">
+              <p
+                th:each=" e:${#fields.errors('City')}"
+                th:text="${e}"
+                th:classappend="${#fields.hasErrors('City')} ? 'error' : ''"
+              ></p>
+            </div>
+          </div>
+
+          <div class="button-container">
+            <div class="text-fields state">
+              <label for="State"><box-icon name="map"></box-icon></label>
+              <input
+                type="text"
+                name="State"
+                id="State"
+                th:value="${signUpLoginModel.State}"
+                th:classappend="${#fields.hasErrors('State')} ? 'error' : ''"
+                placeholder=" Enter your State"
+              />
+            </div>
+            <div class="text-fields pincode">
+              <label for="pincode"><box-icon name="map"></box-icon></label>
+              <input
+                type="tel"
+                name="PinCode"
+                id="pincode"
+                th:value="${signUpLoginModel.PinCode}"
+                th:classappend="${#fields.hasErrors('PinCode')} ? 'error' : ''"
+                placeholder="Enter your PinCode"
+              />
+            </div>
+          </div>
+
+          <div class="button-container">
+            <div class="validation">
+              <p
+                th:each=" e:${#fields.errors('State')}"
+                th:text="${e}"
+                th:classappend="${#fields.hasErrors('State')} ? 'error' : ''"
+              ></p>
+            </div>
+            <div class="validation">
+              <p
+                th:each=" e:${#fields.errors('PinCode')}"
+                th:text="${e}"
+                th:classappend="${#fields.hasErrors('PinCode')} ? 'error' : ''"
+              ></p>
+            </div>
+          </div>
+
+          <div class="pagination-btns">
+            <input
+              type="button"
+              value="Previous"
+              class="previousPage stagebtn2a"
+              onclick="stage2to1()"
+            />
+            <input
+              type="button"
+              value="Next"
+              class="nextPage stagebtn2b"
+              onclick="stage2to3()"
+            />
+          </div>
+        </div>
+        <div class="stage3-content">
+          <!-- Address info -->
+          <div class="tc-container">
+            <label for="tc" class="tc">
+              <input
+                type="checkbox"
+                name="Agreed"
+                id="tc"
+                class="checkbox"
+                required
+              />
+              By Submiting your details , you agree to the
+              <a href="#">terms and conditions.</a>
+            </label>
+          </div>
+          <div class="pagination-btns">
+            <input
+              type="button"
+              value="Previous"
+              class="previousPage stagebtn3a"
+              onclick="stage3to2()"
+            />
+            <input
+              type="hidden"
+              name="type"
+              th:value="${userType}"
+              aria-hidden="true"
+            />
+            <input type="submit" value="Submit" class="nextPage stagebtn3b" />
+          </div>
+        </div>
+        <!-- </div> -->
+      </form>
+    </div>
+  </body>
+  <script>
+    var form = document
+      .getElementById("signupForm")
+      .addEventListener("submit", function (event) {
+        if (!this.checkValidity()) {
+          event.preventDefault(); // Prevent form submission if validation fails
+        }
+      });
+    let signupContent = document.querySelector(".signup-form-content"),
+      stagebtn1b = document.querySelector(".stagebtn1b"),
+      stagebtn2a = document.querySelector(".stagebtn2a"),
+      stagebtn2b = document.querySelector(".stagebtn2b"),
+      stagebtn3a = document.querySelector(".stagebtn3a"),
+      stagebtn3b = document.querySelector(".stagebtn3b"),
+      signupContent1 = document.querySelector(".stage1-content"),
+      signupContent2 = document.querySelector(".stage2-content"),
+      signupContent3 = document.querySelector(".stage3-content");
+
+    signupContent2.style.display = "none";
+    signupContent3.style.display = "none";
+
+    function stage1to2() {
+      signupContent1.style.display = "none";
+      signupContent3.style.display = "none";
+      signupContent2.style.display = "block";
+      document.querySelector(".stageno-1").innerText = "✔";
+      document.querySelector(".stageno-1").style.backgroundColor = "#9100FF";
+      document.querySelector(".stageno-1").style.color = "#fff";
+    }
+    function stage2to1() {
+      signupContent1.style.display = "block";
+      signupContent3.style.display = "none";
+      signupContent2.style.display = "none";
+    }
+    function stage2to3() {
+      signupContent1.style.display = "none";
+      signupContent3.style.display = "block";
+      signupContent2.style.display = "none";
+      document.querySelector(".stageno-2").innerText = "✔";
+      document.querySelector(".stageno-2").style.backgroundColor = "#9100FF";
+      document.querySelector(".stageno-2").style.color = "#fff";
+    }
+    function stage3to2() {
+      signupContent1.style.display = "none";
+      signupContent3.style.display = "none";
+      signupContent2.style.display = "block";
+    }
+  </script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</html>

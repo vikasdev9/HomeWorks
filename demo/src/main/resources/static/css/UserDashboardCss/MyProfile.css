@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,700;1,600;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+.container {
+  width: 70%;
+  margin: 3% 0px;
+  display: flex;
+  height: 80%;
+  box-shadow: 0 10px 12px rgba(54, 176, 138, 0.005);
+  border-radius: 6px;
+  background: #fff;
+}
+
+
+.sign-form-container {
+  width: 70%;
+  padding: 2% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+.side-big-heading {
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.7rem;
+  margin: 46% 0 5%;
+}
+
+.primary-bg-text {
+  color: #eff0ff;
+  font-weight: 500;
+  text-align: center;
+}
+
+.big-heading {
+  font-weight: 900;
+  font-size: 2rem;
+  color: #696cff;
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+
+.stageno {
+  width: 40px;
+  height: 40px;
+  margin: 6% 0;
+  padding: 2% 5%;
+  border-radius: 50%;
+  background-color: #f5f5f9;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  margin: 4% 0;
+}
+
+.text-fields {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 2%;
+  margin: 0 2%;
+  width: 46%;
+  border-radius: 4px;
+  color: #84848d;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: inherit;
+  color: #84848d;
+  width: 200%;
+  margin-left: 4%;
+  font-size: 1rem;
+}
+
+.signup-form-content {
+  width: 100%;
+  padding: 0 3%;
+}
+
+
+.card {
+  width: 650px;
+  height: 500px;
+  margin: 75px auto 0;
+  background-color: #fff;
+  box-shadow: 0 3px 30px rgba(0, 0, 0, 0.14);
+  color: #444;
+  text-align: center;
+  font-size: 16px;
+}
+
+.card .card-header {
+  position: relative;
+  height: 48px;
+}
+
+.card .card-header .profile-img {
+  width: 130px;
+  height: 130px;
+  border-radius:50%;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateY(-50%, -50%);
+  border: 6px solid #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-file {
+  display: none;
+}
+
+.card .card-body {
+  padding: 10px 40px;
+  margin-top: 110px;
+}
+
+.card .card-body .full-name {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 10px 0 0;
+}
+
+.card .card-body .email {
+  font-size: 13px;
+  color: #777;
+  margin: 5px 0 0;
+}
+
+.card .card-body .City {
+  font-weight: 500;
+  margin: 10px 0 0;
+}
+
+.card .card-body .desc {
+  line-height: 24px;
+}
+
+.card .social-icon {
+  font-size: 18px;
+  margin: 0 7px;
+}
+
+.card .social-icon .facebook {
+  color: #3b5999;
+}
+
+
+.items_menu {
+
+  margin: 50px auto 50px auto;
+  width: 200px;
+  height: 50px;
+
+}
+
+.items_menu li {
+  list-style: none;
+  padding: 15px 0;
+  transition: 0.3s ease;
+  border-radius: 8px;
+  margin: 8px;
+  display: flex;
+  /* Use flexbox */
+  align-items: center;
+
+}
+
+.items_menu li:hover {
+  color: #fff;
+  background-color: #9100FF;
+  cursor: pointer;
+}
+
+.items_menu li:hover i,
+.items_menu li:hover a {
+  color: #f3f4f6;
+}
+
+.items_menu li i {
+  color: rgb(134, 141, 151);
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 24px;
+  margin: 0 10px 0 25px;
+  margin-right: 10px;
+}
+
+.items_menu li a {
+  text-decoration: none;
+  color: rgb(134, 141, 151);
+  font-weight: 300px;
+  transition: 0.3s ease;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url('bx-cake.svg') no-repeat;
+  height: 20px;
+  width: 20px;
+}
+
+.text-fields.fname:after {
+  content: 'Full Name';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -210px;
+  width: 334px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.email:after {
+  content: 'Email Id';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -210px;
+  width: 302px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.contact:after {
+  content: 'Contact';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -205px;
+  width: 342px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.password:after {
+  content: 'Password';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -205px;
+  width: 342px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.contact:after {
+  content: 'Contact';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -205px;
+  width: 342px;
+  color: #696cff;
+  top: -33px;
+}
+
+.gender-selection {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+  width: 90%;
+}
+
+.field-heading {
+  color: #696cff;
+  width: 20%;
+}
+
+.gender-selection label {
+  margin: 0 1%;
+  display: flex;
+  align-items: center;
+  color: #84848d;
+  width: 10%;
+}
+
+input[type="radio"] {
+  accent-color: #696cff;
+  margin-right: 0%;
+}
+
+.pagination-btns {
+  display: flex;
+  justify-content: center;
+  margin: 3% 0;
+  padding: 0 4%;
+}
+
+.nextPage,
+.previousPage {
+  background-color: #696cff;
+  color: #fff;
+  width: 45%;
+  cursor: pointer;
+  padding: 2%;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.nextPage:hover,
+.previousPage:hover {
+  background: #696cff;
+}
+
+.text-fields.phone:after {
+  content: 'Phone number';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.email:after {
+  content: 'Email Id';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 388px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.password:after,
+.text-fields.confirmpassword:after {
+  content: 'Enter Password';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -182px;
+  width: 541px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.confirmpassword:after {
+  content: 'Confirm Password';
+  left: -153px;
+  width: 748px;
+}
+
+.text-fields.address:after {
+  content: 'Street Address';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.Town:after {
+  content: 'Town Area';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.district:after {
+  content: 'District ';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.City:after {
+  content: 'City Name';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.state:after {
+  content: 'State';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #696cff;
+  top: -33px;
+}
+
+.text-fields.pincode:after {
+  content: 'PinCode';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #696cff;
+  top: -33px;
+}
+
+.tc-container input {
+  width: 20px;
+  margin-left: 4%;
+  accent-color: #696cff;
+}
+
+.tc-container .checkbox {
+  width: 25px;
+  height: 25px;
+  margin-left: 5%;
+  accent-color: #696cff;
+}
+
+.tc a {
+  text-decoration: none;
+  color: #696cff;
+}
+
+label.tc {
+  margin-left: 4%;
+  font-size: 20px;
+}
+
+.login-form-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form-contents .text-fields {
+  margin: 3% 2%;
+  width: 70%;
+  padding: 3%;
+}
+
+.login-form-contents .text-fields.email:after {
+  left: -323px;
+}
+
+.login-form-contents .text-fields.password:after {
+  left: -294px;
+}

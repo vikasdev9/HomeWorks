@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/UserDashboardCss/Userdashboard.css"
+      th:href="@{../css/UserDashboardCss/Userdashboard.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/WorkerDashboard/Services.css"
+      th:href="@{../css/WorkerDashboard/Services.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      flex
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+      integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <th:block
+      th:insert="~{UserDashboard/sidemenu ::  UserdbheaderFragment(option=${session.option})}"
+    />
+    <section style="width: 100%">
+      <h3 class="i-name">Worker Services !</h3>
+
+      <div class="board">
+        <div class="container">
+          <h1 class="heading">List Services</h1>
+          <form th:action="@{/publish}" method="post">
+          <div class="box-container">
+            <div class="box" th:each="s1 : ${Work}">
+
+              <label for="input-file">
+                <img th:src="@{../images/user.png}" alt="profile pic" id="Profile-Pic" class="profile-img"/>
+              </label>
+           <input
+          type="file"
+          accept="image/jpeg,image/png,image/jpg"
+          id="input-file"
+          style="display: none;"
+           />
+              <h3>
+                <box-icon name="user"></box-icon> Worker Name
+                <!-- Assuming you want to display worker name dynamically -->
+              </h3>
+              <h3>
+                <box-icon name="briefcase"></box-icon>
+                <span th:text="${s1.getService_Name()}" th:value="${s1.getService_Name()}"></span>
+                <!-- Display service name dynamically -->
+              </h3>
+              <h4 href="#" class="btns">
+                <box-icon name="time"></box-icon>
+                <span th:text="${s1.getHour()}" th:value="${s1.getHour()}"></span>
+                <!-- Display hours dynamically -->
+              </h4>
+              <h4 href="#" class="btns">
+                <box-icon name="rupee"></box-icon>
+                <span th:text="${s1.getMoney_charge()}" th:value="${s1.getMoney_charge()}"></span>
+                <!-- Display money charge dynamically -->
+              </h4>
+              <p class="description">
+                <span th:text="${s1.getAvailable_day()}" th:value="${s1.getAvailable_day()}"></span>
+                <!-- Display description dynamically -->
+              </p>
+              <p class="description">
+                <span th:text="${s1.getDescription()}" th:value="${s1.getDescription()}"></span>
+                <!-- Display description dynamically -->
+              </p>
+              <input type="submit" value="Publish Now" class="btn"></input>
+               <input type="submit" value="withhold" class="btn"></input>
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      $("#menu-btn").click(function () {
+        $("#menu").toggleClass("active");
+      });
+    </script>
+     <script>
+      let Profile = document.getElementById("Profile-Pic");
+      let inputFile = document.getElementById("input-file");
+
+      inputFile.onchange = function () {
+        Profile.src = URL.createObjectURL(inputFile.files[0]);
+      };
+    </script>
+  </body>
+</html>

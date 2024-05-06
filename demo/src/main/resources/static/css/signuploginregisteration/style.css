@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,700;1,600;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: #f5f5f9;
+}
+
+.container {
+  width: 100%;
+  margin: 2% auto;
+  display: flex;
+  height: 100%;
+  box-shadow: 0 12px 18px rgba(54, 176, 138, 0.005);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.login-link {
+  background-color: #9100FF;
+  background-image: url('bg-shapes.svg');
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  width: 30%;
+  padding: 3%;
+  height: 900px;
+}
+
+
+.signup-form-container {
+  width: 70%;
+  padding: 3% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-form-container {
+  width: 70%;
+  padding: 3% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.logo {
+  font-weight: 600;
+  color: #fff;
+  margin-top: 10px;
+  margin-left: 50px;
+
+}
+
+.side-big-heading {
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.7rem;
+  margin: 46% 0 5%;
+}
+
+.primary-bg-text {
+  color: #eff0ff;
+  font-weight: 500;
+  text-align: center;
+}
+
+a.loginbtn {
+  text-decoration: none;
+  color: #fff;
+  width: 70%;
+  font-weight: 500;
+  display: inline-block;
+  margin: 7% 15%;
+  text-align: center;
+  border: 2px solid #eff0ff;
+  border-radius: 24px;
+  padding: 3% 0;
+}
+
+a.loginbtn:hover {
+  color: #9100FF;
+  background-color: #fff;
+}
+
+.big-heading {
+  font-weight: 900;
+  font-size: 2rem;
+  color: #9100FF;
+  margin-top: 10px;
+}
+
+.social-media-platform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.social-media-platform a {
+  color: #1a1d86;
+  text-decoration: none;
+  border-radius: 50%;
+  display: inline-flex;
+  border: 1px solid #e0e3e2;
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4% 0;
+  width: 70%;
+}
+
+.progress-bar .stage {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.progress-bar .tool-tip {
+  color: #1a1d86;
+  font-weight: 600;
+}
+
+.stageno {
+  width: 40px;
+  height: 40px;
+  margin: 6% 0;
+  padding: 2% 5%;
+  border-radius: 50%;
+  background-color: #f5f5f9;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  margin: 4% 0;
+}
+
+.text-fields {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 2%;
+  margin: 0 2%;
+  width: 46%;
+  border-radius: 4px;
+  color: #84848d;
+}
+
+.button-container .validation {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 2%;
+  margin: 0 2%;
+  width: 46%;
+  border-radius: 4px;
+  color: #84848d;
+}
+
+
+input {
+  border: none;
+  outline: none;
+  background: inherit;
+  color: #84848d;
+  width: 200%;
+  margin-left: 4%;
+  font-size: 1rem;
+  /* background-color: aqua; */
+}
+
+.signup-form-content {
+  width: 100%;
+  padding: 0 3%;
+}
+
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-year-field,
+input::placeholder {
+  background-color: #fff;
+  color: #84848d;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url('bx-cake.svg') no-repeat;
+  height: 20px;
+  width: 20px;
+}
+
+.text-fields.fname:after {
+  content: 'Full Name';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -210px;
+  width: 334px;
+  color: #9100FF;
+  top: -33px;
+ 
+}
+/*  */
+.error{
+  border: 1px solid red;
+  color: red;
+}
+.error1 {
+  color: red;
+  background-color: #9100FF;
+}
+.backbtn{
+  text-align: end;
+}
+
+.text-fields.email:after {
+  content: 'Email Id';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -210px;
+  width: 302px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.text-fields.contact:after {
+  content: 'Contact';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -205px;
+  width: 342px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.text-fields.password:after {
+  content: 'Password';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -205px;
+  width: 342px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.text-fields.contact:after {
+  content: 'Contact';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -205px;
+  width: 342px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.gender-selection {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+  width: 90%;
+}
+
+.field-heading {
+  color: #9100FF;
+  width: 20%;
+}
+
+.gender-selection label {
+  margin: 0 1%;
+  display: flex;
+  align-items: center;
+  color: #84848d;
+  width: 10%;
+}
+
+input[type="radio"] {
+  accent-color: #9100FF;
+  margin-right: 0%;
+}
+
+.pagination-btns {
+  display: flex;
+  justify-content: center;
+  margin: 3% 0;
+  padding: 0 4%;
+}
+
+.nextPage,
+.previousPage {
+  background-color: #9100FF;
+  color: #fff;
+  width: 45%;
+  cursor: pointer;
+  padding: 2%;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.nextPage:hover,
+.previousPage:hover {
+  background: #9100FF;
+}
+
+.text-fields.phone:after {
+  content: 'Phone number';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #9100FF;
+  top: -33px;
+}
+
+
+.text-fields.email:after {
+  content: 'Email Id';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 388px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.text-fields.password:after,
+.text-fields.confirmpassword:after {
+  content: 'Enter Password';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -182px;
+  width: 541px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.text-fields.confirmpassword:after {
+  content: 'Confirm Password';
+  left: -153px;
+  width: 748px;
+}
+
+.text-fields.address:after {
+  content: 'Street Address';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.text-fields.Town:after {
+  content: 'Town Area';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.text-fields.district:after {
+  content: 'District ';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.text-fields.City:after {
+  content: 'City Name';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.text-fields.state:after {
+  content: 'State';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.text-fields.pincode:after {
+  content: 'PinCode';
+  background-color: #fff;
+  position: relative;
+  padding: 0 4%;
+  left: -187px;
+  width: 492px;
+  color: #9100FF;
+  top: -33px;
+}
+
+.tc-container input {
+  width: 20px;
+  margin-left: 4%;
+  accent-color: #9100FF;
+}
+
+.tc-container .checkbox {
+  width: 25px;
+  height: 25px;
+  margin-left: 5%;
+  accent-color: #9100FF;
+}
+
+/* Error css */
+.text-fields .error {
+  border: 1px solid red;
+  color: red;
+}
+
+.tc a {
+  text-decoration: none;
+  color: #9100FF;
+}
+
+label.tc {
+  margin-left: 4%;
+  font-size: 20px;
+}
+
+.login-form-contents {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form-contents .text-fields {
+  margin: 5% 2%;
+  width: 70%;
+  padding: 3%;
+}
+
+.login-form-contents .text-fields.email:after {
+  left: -323px;
+}
+
+.login-form-contents .text-fields.password:after {
+  left: -294px;
+}

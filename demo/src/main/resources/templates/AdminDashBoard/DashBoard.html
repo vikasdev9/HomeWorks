@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      th:href="@{../css/AdminDashBoard/Admindashboard.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      flex
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <!-- <th:block
+      th:insert="~{Userdashboard/side :: UserdbheaderFragment(yourValue=${yourValue})}"
+    /> -->
+    <th:block
+      th:insert="~{AdminDashBoard/Adminside ::  Adminside(option=${session.option})}"
+    />
+    <!-- <th:block th:insert="~{Userdashboard/side :: UserdbheaderFragment}" /> -->
+    <section style="width: 100%">
+      <h3 class="i-name">Admin DashBoard</h3>
+
+      <div class="board">
+        <h3 class="i-name" style="margin-top: 10px">User Detail</h3>
+        <div class="value">
+          <div class="val-box">
+            <i class="fas fa-users"></i>
+            <div>
+              <h3 th:text="${numofuser}" th:value="${numofuser}"></h3>
+              <span>Total Users</span>
+            </div>
+          </div>
+
+          <div class="val-box">
+            <i class="fas fa-shopping-cart"></i>
+            <div>
+              <h3>1</h3>
+              <span>Total Service Booked</span>
+            </div>
+          </div>
+
+          <div class="val-box">
+            <i class="fas fa-dollar-sign"></i>
+            <div>
+              <h3>1000</h3>
+              <span> Total Payment</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="board">
+        <h3 class="i-name" style="margin-top: 10px">Worker Detail</h3>
+        <div class="value">
+          <div class="val-box">
+            <i class="fas fa-users"></i>
+            <div>
+              <h3 th:text="${numofworker}" th:value="${numofworker}"></h3>
+              <span>Total Worker</span>
+            </div>
+          </div>
+
+          <div class="val-box">
+            <i class="fas fa-shopping-cart"></i>
+            <div>
+              <h3>7</h3>
+              <span>Total Services</span>
+            </div>
+          </div>
+
+          <div class="val-box">
+            <i class="fas fa-shopping-cart"></i>
+            <div>
+              <h3>2</h3>
+              <span> Total Services Confirm</span>
+            </div>
+          </div>
+        </div>
+        <div class="value">
+          <div class="val-box">
+            <i class="fas fa-shopping-cart"></i>
+            <div>
+              <h3>1</h3>
+              <span> Total Services Pending</span>
+            </div>
+          </div>
+          <div class="val-box">
+            <i class="fas fa-shopping-cart"></i>
+            <div>
+              <h3>2</h3>
+              <span> Total Services Confirm</span>
+            </div>
+          </div>
+          <div class="val-box">
+            <i class="fas fa-shopping-cart"></i>
+            <div>
+              <h3>0</h3>
+              <span> Total Services Cancel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="board1">
+        <div class="val-box">
+          <div>
+            <button type="submit" class="invoice" th:attr="onclick=|Admininvoices('${numofuser}','${numofworker}')|">
+              <i class="fa-solid fa-receipt" style="margin-right: 5px;"></i></i>Invoice
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      $("#menu-btn").click(function () {
+        $("#menu").toggleClass("active");
+      });
+    </script>
+     <script>
+      function Admininvoices(user,worker) {
+        console.log("Number :"+user);
+        window.location.href =
+          "http://localhost:2000/Admininvoice?user=" +
+          user+"&worker="+worker;
+      }
+    </script>
+
+  </body>
+</html>

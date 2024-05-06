@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/UserDashboardCss/Userdashboard.css"
+      th:href="@{../css/UserDashboardCss/Userdashboard.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      flex
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <!-- <th:block
+      th:insert="~{Userdashboard/side :: UserdbheaderFragment(yourValue=${yourValue})}"
+    /> -->
+    <th:block
+      th:insert="~{UserDashboard/sidemenu ::  UserdbheaderFragment(option=${session.option})}"
+    />
+    <!-- <th:block th:insert="~{Userdashboard/side :: UserdbheaderFragment}" /> -->
+    <section style="width: 100%">
+      <h3 class="i-name">Book Services here</h3>
+      <div class="board">
+        <table>
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Title</td>
+              <td>Status</td>
+              <td>Role</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="people">
+                <img src="img4.jpg" alt="" />
+                <div class="people-de">
+                  <h5>John Deo</h5>
+                  <p>VikasChauha0368@gmail.com</p>
+                </div>
+              </td>
+
+              <td class="people-des">
+                <h5>SoftWare Engineer</h5>
+                <p>Web dev</p>
+              </td>
+
+              <td class="active">
+                <p>Active</p>
+              </td>
+
+              <td class="role">
+                <p>Owner</p>
+              </td>
+
+              <td class="edit">
+                <a href="#">Edit</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="people">
+                <img src="img4.jpg" alt="" />
+                <div class="people-de">
+                  <h5>John Deo</h5>
+                  <p>VikasChauha0368@gmail.com</p>
+                </div>
+              </td>
+
+              <td class="people-des">
+                <h5>SoftWare Engineer</h5>
+                <p>Web dev</p>
+              </td>
+
+              <td class="active">
+                <p>Active</p>
+              </td>
+
+              <td class="role">
+                <p>Owner</p>
+              </td>
+
+              <td class="edit">
+                <a href="#">Edit</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="people">
+                <img src="img4.jpg" alt="" />
+                <div class="people-de">
+                  <h5>John Deo</h5>
+                  <p>VikasChauha0368@gmail.com</p>
+                </div>
+              </td>
+
+              <td class="people-des">
+                <h5>SoftWare Engineer</h5>
+                <p>Web dev</p>
+              </td>
+
+              <td class="active">
+                <p>Active</p>
+              </td>
+
+              <td class="role">
+                <p>Owner</p>
+              </td>
+
+              <td class="edit">
+                <a href="#">Edit</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="people">
+                <img src="img4.jpg" alt="" />
+                <div class="people-de">
+                  <h5>John Deo</h5>
+                  <p>VikasChauha0368@gmail.com</p>
+                </div>
+              </td>
+
+              <td class="people-des">
+                <h5>SoftWare Engineer</h5>
+                <p>Web dev</p>
+              </td>
+
+              <td class="active">
+                <p>Active</p>
+              </td>
+
+              <td class="role">
+                <p>Owner</p>
+              </td>
+
+              <td class="edit">
+                <a href="#">Edit</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="people">
+                <img src="img4.jpg" alt="" />
+                <div class="people-de">
+                  <h5>John Deo</h5>
+                  <p>VikasChauha0368@gmail.com</p>
+                </div>
+              </td>
+
+              <td class="people-des">
+                <h5>SoftWare Engineer</h5>
+                <p>Web dev</p>
+              </td>
+
+              <td class="active">
+                <p>Active</p>
+              </td>
+
+              <td class="role">
+                <p>Owner</p>
+              </td>
+
+              <td class="edit">
+                <a href="#">Edit</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="people">
+                <img src="img4.jpg" alt="" />
+                <div class="people-de">
+                  <h5>John Deo</h5>
+                  <p>VikasChauha0368@gmail.com</p>
+                </div>
+              </td>
+
+              <td class="people-des">
+                <h5>SoftWare Engineer</h5>
+                <p>Web dev</p>
+              </td>
+
+              <td class="active">
+                <p>Active</p>
+              </td>
+
+              <td class="role">
+                <p>Owner</p>
+              </td>
+
+              <td class="edit">
+                <a href="#">Edit</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="people">
+                <img src="img4.jpg" alt="" />
+                <div class="people-de">
+                  <h5>John Deo</h5>
+                  <p>VikasChauha0368@gmail.com</p>
+                </div>
+              </td>
+
+              <td class="people-des">
+                <h5>SoftWare Engineer</h5>
+                <p>Web dev</p>
+              </td>
+
+              <td class="active">
+                <p>Active</p>
+              </td>
+
+              <td class="role">
+                <p>Owner</p>
+              </td>
+
+              <td class="edit">
+                <a href="#">Edit</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="people">
+                <img src="img4.jpg" alt="" />
+                <div class="people-de">
+                  <h5>John Deo</h5>
+                  <p>VikasChauha0368@gmail.com</p>
+                </div>
+              </td>
+
+              <td class="people-des">
+                <h5>SoftWare Engineer</h5>
+                <p>Web dev</p>
+              </td>
+
+              <td class="active">
+                <p>Active</p>
+              </td>
+
+              <td class="role">
+                <p>Owner</p>
+              </td>
+
+              <td class="edit">
+                <a href="#">Edit</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <script>
+      $("#menu-btn").click(function () {
+        $("#menu").toggleClass("active");
+      });
+    </script>
+  </body>
+</html>

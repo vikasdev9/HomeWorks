@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/UserDashboardCss/Userdashboard.css"
+      th:href="@{../css/UserDashboardCss/Userdashboard.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/UserDashboardCss/Confirms.css"
+      th:href="@{../css/UserDashboardCss/Confirms.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      flex
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+      integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <th:block
+      th:insert="~{UserDashboard/sidemenu ::  UserdbheaderFragment(option=${session.option})}"
+    />
+    <section style="width: 100%">
+      <h3 class="i-name">Service Confirm!</h3>
+
+      <div class="board">
+        <div class="container">
+          <h1 class="heading" style="color: #9100ff">Confirm Service</h1>
+
+          <div class="box-container" th:each="c1 : ${confirm}">
+            <form th:action="@{/checkoutPage}" method="post">
+              <div class="box">
+                <p class="ptag">
+                  Worker Name:<span th:text="${c1.getWorkerName()}"></span>
+                </p>
+                <p>
+                  Service Name :<span th:text="${c1.getService_Name()}"></span>
+                </p>
+                <p>
+                  Woker Email Id :<span
+                    th:text="${c1.getSetWorkerEmailId()}"
+                  ></span>
+                </p>
+                <p>
+                  Day of Booked Service :<span
+                    th:text="${c1.getDay_of_Booking()}"
+                  ></span>
+                </p>
+                <p>
+                  Money Charge :<span th:text="${c1.getMoney_Charge()}"></span>
+                </p>
+
+                <input
+                  type="hidden"
+                  name="UserEmail"
+                  th:value="${c1.getUserEmailId()}"
+                />
+                <input
+                  type="hidden"
+                  name="Money_charge"
+                  th:value="${c1.getMoney_Charge()}"
+                />
+
+                <input type="submit" value="Pay Now" class="btn" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      $("#menu-btn").click(function () {
+        $("#menu").toggleClass("active");
+      });
+    </script>
+    <script></script>
+  </body>
+</html>

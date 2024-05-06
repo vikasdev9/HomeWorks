@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+      <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/signuploginregisteration/style.css"
+      th:href="@{../css/signuploginregisteration/style.css}"
+    />
+
+</head>
+<body>
+      <div class="container">
+      
+      <form action="" class="sign-form-container" th:action="@{/Adminloginsubmit}" th:object="${Adminlogin}" method="post">
+        <p class="big-heading">Login to your Admin account</p>
+            <div style="display: flex; justify-content: end; align-items: end">
+          <p class="backbtn" style="text-align: end">
+            <box-icon
+              name="arrow-back"
+              style="margin-right: 5px; align-self: center"
+            ></box-icon
+            ><a th:href="@{/home}" style="text-align: end">Back To Dashborad</a>
+          </p>
+        </div>
+
+        <div class="login-form-contents">
+          <div class="text-fields email">
+                <label for="email"><box-icon name='envelope' ></box-icon></label>
+                <input
+                  type="email"
+                  name="AdminEmail"
+                  th:value="${Adminlogin.AdminEmail}"
+                  id="email"
+                  placeholder="Enter your email id"
+                  th:classappend="${#fields.hasErrors('AdminEmail')} ? 'error' : ''"
+                />
+              </div>
+
+               <div class="text-field">
+                <p
+                  th:each=" e:${#fields.errors('AdminEmail')}"
+                  th:text="${e}"
+                  th:classappend="${#fields.hasErrors('AdminEmail')} ? 'error' : ''"
+                ></p>
+              </div>
+
+                <div class="text-fields password">
+                <label for="password"
+                  ><box-icon name="lock-alt"></box-icon
+                ></label>
+                <input
+                  type="password"
+                  name="Adminpassword"
+                  th:value="${Adminlogin.Adminpassword}"
+                  id="password"
+                  placeholder="Enter password"
+                />
+              </div>
+               <div class="text-field">
+                <p
+                  th:each=" e:${#fields.errors('Adminpassword')}"
+                  th:text="${e}"
+                  th:classappend="${#fields.hasErrors('Adminpassword')} ? 'error' : ''"
+                ></p>
+              </div>
+        </div>
+        <input type="submit" value="Login" class="nextPage">
+      </form>
+</body>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</html>

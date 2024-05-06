@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/UserDashboardCss/Userdashboard.css"
+      th:href="@{../css/UserDashboardCss/Userdashboard.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/WorkerDashboard/Create_New_Service.css"
+      th:href="@{../css/WorkerDashboard/Create_New_Service.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      flex
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+      integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <th:block
+      th:insert="~{UserDashboard/sidemenu ::  UserdbheaderFragment(option=${session.option})}"
+    />
+    <section style="width: 100%">
+      <h3 class="i-name">Create New Services !!</h3>
+
+      <div class="board">
+        <div class="containers">
+          <form
+            th:action="@{/upload}"
+            class="sign-form-container"
+            th:object="${worker_Service}"
+            method="post"
+          >
+            <div class="signup-form-content">
+              <!-- Personal info -->
+              <div class="stage1-content"></div>
+            </div>
+
+            <div class="stage2-content">
+              <!-- Address info -->
+              <p
+                class="big-heading"
+                style="color: #000; font-weight: 600; font-size: larger"
+              >
+                Update Your Profile
+              </p>
+
+              <div class="button-container">
+                <div class="text-fields Service_Name">
+                  <label for="fname"
+                    ><box-icon name="briefcase"></box-icon
+                  ></label>
+                  <input
+                    type="text"
+                    name="Service_Name"
+                    th:value="${worker_Service.Service_Name}"
+                    id="fname"
+                    placeholder="Enter your Service Name"
+                  />
+                </div>
+                <div class="text-fields Hours">
+                  <label for="type"><box-icon name="time"></box-icon></label>
+                  <input
+                    type="text"
+                    name="Hour"
+                    th:value="${worker_Service.Hour}"
+                    id="type"
+                    placeholder="Hours To Charge"
+                  />
+                </div>
+              </div>
+              <div class="button-container">
+                <div class="text-fields money">
+                  <label for="schedule"
+                    ><box-icon name="rupee"></box-icon
+                  ></label>
+                  <input
+                    type="text"
+                    name="Money_charge"
+                    th:value="${worker_Service.Money_charge}"
+                    id="schedule"
+                    placeholder="Money charge"
+                  />
+                </div>
+                <div class="text-fields Available">
+                  <label for="State"
+                    ><box-icon name="calendar"></box-icon
+                  ></label>
+                  <input
+                    type="text"
+                    name="Available_day"
+                    th:value="${worker_Service.Available_day}"
+                    id="State"
+                    placeholder="Enter your Days Available"
+                  />
+                </div>
+              </div>
+
+              <div class="button-container">
+                <div class="text-fields Description">
+                  <label for="State"
+                    ><box-icon name="captions"></box-icon
+                  ></label>
+                  <input
+                    type="text"
+                    name="description"
+                    th:value="${worker_Service.description}"
+                    id="Towen"
+                    placeholder="Tell About Your Service"
+                  />
+                </div>
+                <div class="text-fields experience">
+                  <label for="pincode"><box-icon name="time"></box-icon></label>
+                  <input
+                    type="tel"
+                    name="Experience"
+                    th:value="${worker_Service.Experience}"
+                    id="pincode"
+                    placeholder="Year of Experiance"
+                  />
+                </div>
+              </div>
+
+              <div class="pagination-btns">
+                <input
+                  type="submit"
+                  value="upload"
+                  class="nextPage stagebtn1b"
+                  onclick="stage1to2()"
+                />
+              </div>
+            </div>
+            <div class="stage3-content">
+              <!-- Address info -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      $("#menu-btn").click(function () {
+        $("#menu").toggleClass("active");
+      });
+    </script>
+  </body>
+</html>

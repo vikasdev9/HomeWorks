@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/UserDashboardCss/Userdashboard.css"
+      th:href="@{../css/UserDashboardCss/Userdashboard.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/UserDashboardCss/MyProfile.css"
+      th:href="@{../css/UserDashboardCss/MyProfile.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      flex
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+      integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <th:block
+      th:insert="~{UserDashboard/sidemenu ::  UserdbheaderFragment(option=${session.option})}"
+    />
+ 
+    <section style="width: 100%">
+      <h3 class="i-name">MY PROFILE !</h3>
+
+      <div class="board">
+      
+    <div class="containers">
+      <form action="" class="sign-form-container">
+
+        <div class="signup-form-content">
+          <!-- Personal info -->
+          <div class="stage1-content">
+    
+      <div class="card">
+      <div class="card-header">
+         <label for="input-file">
+                <img th:src="@{../images/user.png}" alt="profile pic" id="Profile-Pic" class="profile-img"/>
+              </label>
+           <!-- <input
+          type="file"
+          accept="image/jpeg,image/png,image/jpg"
+          id="input-file"
+          style="display: none;"
+           /> -->
+      </div>
+      <div class="card-body">
+         
+        <p class="full-name" ><box-icon name='user' style="margin-right: 3px;"></box-icon><span th:text="${data?.getFullName()}"></span></p>
+        <p class="email"><box-icon name='envelope' ></box-icon> <span th:text="${data?.getEmailId()}"></span></p></p>
+        <p class="City"><box-icon name='map' ></box-icon><span th:text="${data?.getCity()}"></span></p></p>
+        <p class="City"><box-icon name='map' ></box-icon><span th:text="${data?.getTown_Area()}"></span></p></p>
+        
+        
+        <p>
+          <a href="#" class="social-icon facebook"
+            ><box-icon type="logo" name="facebook"></box-icon
+          ></a>
+          <a href="#" class="social-icon instagram"
+            ><box-icon type="logo" name="facebook"></box-icon
+          ></a>
+          <a href="#" class="social-icon whatsApp"
+            ><box-icon type="logo" name="facebook"></box-icon
+          ></a>
+
+        </p>
+      </div>
+         <div class="items_menu">
+            <ul>
+              <!-- User Dashboard Menu -->
+              <li onclick="stage1to2()">
+                <i class="bx bx-edit-alt"></i><a href="#">Edit Profile</a>
+              </li>
+            </ul>
+          </div>
+    </div>
+
+    </div>
+            
+     </div>
+
+
+          <div class="stage2-content">
+            <!-- Address info -->
+            <form th:action="@{/Update}" method="post">
+               <p class="big-heading" style="font-weight: bold;">Update Your Profile</p>
+         
+                <div class="button-container">
+              <div class="text-fields fname">
+                <label for="fname"><box-icon name="user"></box-icon></label>
+                <input
+                  type="text"
+                  name="fname"
+                  id="fname"
+                  th:value="${data?.getFullName()}"
+                  placeholder="Enter your full name"
+                />
+              </div>
+              <div class="text-fields email">
+                <label for="email"><box-icon name="envelope"></box-icon></label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  th:value="${data?.getEmailId()}"
+                  placeholder="Enter your Email Address"
+                />
+              </div>
+            </div>
+            <div class="button-container">
+              <div class="text-fields phone">
+                <label for="phone"><box-icon name="phone"></box-icon></label>
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  th:value="${data?.getPhone_Number()}"
+                  placeholder="phone number"
+                />
+              </div>
+                   <div class="text-fields password">
+                <label for="password"
+                  ><box-icon name="lock-alt"></box-icon
+                ></label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  th:value="${data?.getPassword()}"
+                  placeholder="Enter password"
+                />
+              </div>
+            </div>
+
+             <div class="button-container">
+                <div class="gender-selection">
+                <p class="field-heading">Gender :</p>
+                <label for="male"
+                  ><input type="radio" name="gender" id="male" th:value="${data?.getGender()}" />Male</label
+                >
+                <label for="Female"
+                  ><input type="radio" name="gender" id="female" th:value="${data?.getGender()}" />Female</label>
+              </div>
+            </div>
+            <div class="button-container">
+              <div class="text-fields address">
+                <label for="address"><box-icon name="map"></box-icon></label>
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  th:value="${data?.getStreet_Address()}"
+                  placeholder="Enter your Street Address"
+                />
+              </div>
+              <div class="text-fields Town">
+                <label for="Town"><box-icon name="map"></box-icon></label>
+                <input
+                  type="text"
+                  name="Town"
+                  id="Town"
+                  th:value="${data?.getTown_Area()}"
+                  placeholder="Enter Town Area"
+                />
+              </div>
+            </div>
+
+            <div class="button-container">
+              <div class="text-fields district">
+                <label for="district"
+                  ><box-icon name="map"></box-icon
+                ></label>
+                <input
+                  type="text"
+                  name="district"
+                  id="district"
+                  th:value="${data?.getDistrict()}"
+                  placeholder=" Enter your District"
+                />
+              </div>
+              <div class="text-fields City">
+                <label for="City"
+                  ><box-icon name="map"></box-icon
+                ></label>
+                <input
+                  type="text"
+                  name="City"
+                  id="City"
+                  th:value="${data?.getCity()}"
+                  placeholder="Enter your City"
+                />
+              </div>
+            </div>
+
+            <div class="button-container">
+              <div class="text-fields state">
+                <label for="State"
+                  ><box-icon name="map"></box-icon
+                ></label>
+                <input
+                  type="text"
+                  name="State"
+                  id="State"
+                  th:value="${data?.getState()}"
+                  placeholder=" Enter your State"
+                />
+              </div>
+              <div class="text-fields pincode">
+                <label for="pincode"
+                  ><box-icon name="map"></box-icon
+                ></label>
+                <input
+                  type="tel"
+                  name="pincode"
+                  id="pincode"
+                  th:value="${data?.getPinCode()}"
+                  placeholder="Enter your PinCode"
+                />
+              </div>
+            </div>
+
+            <div class="pagination-btns">
+              <input
+                type="submit"
+                value="Save"
+                class="previousPage stagebtn2a"
+                onclick="stage2to1()"
+              />
+
+            </div>
+             </form>
+          </div>
+         
+          <div class="stage3-content">
+            <!-- Address info -->
+
+
+          </div>
+        </div>
+      </form>
+    </div>
+      </div>
+    </section>
+
+    <script>
+      $("#menu-btn").click(function () {
+        $("#menu").toggleClass("active");
+      });
+    </script>
+    <script>
+      let signupContent = document.querySelector(".signup-form-content"),
+        stagebtn1b = document.querySelector(".stagebtn1b"),
+        stagebtn2a = document.querySelector(".stagebtn2a"),
+        stagebtn2b = document.querySelector(".stagebtn2b"),
+        stagebtn3a = document.querySelector(".stagebtn3a"),
+        stagebtn3b = document.querySelector(".stagebtn3b"),
+        signupContent1 = document.querySelector(".stage1-content"),
+        signupContent2 = document.querySelector(".stage2-content"),
+        signupContent3 = document.querySelector(".stage3-content");
+
+      signupContent2.style.display = "none";
+      signupContent3.style.display = "none";
+
+      function stage1to2() {
+        signupContent1.style.display = "none";
+        signupContent3.style.display = "none";
+        signupContent2.style.display = "block";
+        document.querySelector(".stageno-1").innerText = "✔";
+        document.querySelector(".stageno-1").style.backgroundColor = "#696cff";
+        document.querySelector(".stageno-1").style.color = "#fff";
+      }
+      function stage2to1() {
+        signupContent1.style.display = "block";
+        signupContent3.style.display = "none";
+        signupContent2.style.display = "none";
+      }
+    </script>
+    <!-- <script>
+      let Profile = document.getElementById("Profile-Pic");
+      let inputFile = document.getElementById("input-file");
+
+        let savedImageURL = localStorage.getItem('profileImageURL');
+    if (savedImageURL) {
+        Profile.src = savedImageURL;
+    }
+
+      inputFile.onchange = function () {
+        Profile.src = URL.createObjectURL(inputFile.files[0]);
+        localStorage.setItem('profileImageURL', Profile.src);
+      };
+
+
+    </script> -->
+  </body>
+</html>

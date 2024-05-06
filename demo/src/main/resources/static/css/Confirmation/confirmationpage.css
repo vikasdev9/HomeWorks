@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+body{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top: 40px;
+}
+
+.card{
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  width: 35%;
+  height: 150px;
+  border-radius: 10px;
+  position: relative;
+}
+.profile-img{
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ border: 2px solid #2f4f4f;
+}
+.info{
+ margin-left: 30px;
+ color: #555;
+ font-weight: 500;
+}
+.info h1{
+ font-size: 26px;
+ font-weight: 500;
+ color: #333;
+ margin-bottom: 20px;
+ margin-top: 10px;
+}
+.info .fa-solid fa-user{
+ width: 5px;
+margin-right: 20px;
+}
+.info .fa-briefcase{
+ width: 5px;
+margin-right: 15px;
+}
+.info ul{
+ display: flex;
+ align-items: center;
+ margin: 10px 0 20px;
+}
+.info ul li{
+ list-style: none;
+ display: inline-flex;
+ align-items: center;
+ font-size: 15px;
+ margin-right: 15px;
+ margin-top: 5px;
+}
+.info ul li i{
+width: 15px;
+margin-right: 5px;
+}
+
+
+.container{
+  max-width: 650px;
+  padding: 28px;
+  margin: 40px 28px;
+  box-shadow: 0 15px 20px #ABB2B9;
+}
+h2{
+  font-size: 26px;
+  font-weight: 600;
+  text-align: left;
+  color: #2f4f4f;
+  padding-bottom: 8px;
+  border-bottom: 1px solid silver;
+}
+.UserDetail{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.input-box{
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  padding-bottom: 15px;
+}
+.input-box:nth-child(2n){
+  justify-content: end;
+}
+.input-box label, .gender-title{
+  width: 95%;
+  color: #2f4f4f;
+  font-weight: bold;
+  margin: 5px 0;
+}
+.gender-title{
+  font-size: 16px;
+}
+.input-box input{
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.input-box input:is(:focus, :valid){
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+.gender-category{
+  color: grey;
+}
+.gender-category label{
+  padding: 0 20px 0 5px;
+  font-size: 14px;
+}
+.gender-category label, .gender-category input{
+  cursor: pointer;
+}
+.alert p{
+  font-size: 14px;
+  font-style: italic;
+  color: dimgray;
+  margin: 5px 0;
+  padding: 10px;
+}
+.alert a{
+  text-decoration: none;
+  color: #9100FF;
+}
+.alert a:hover{
+  text-decoration: underline;
+  color: #1C1C1C;
+}
+.button-container{
+  margin: 15px 0;
+}
+.button-container button{
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right,#9100FF,#9100FF);
+}
+.button-container button:hover{
+  background-image: linear-gradient(to right,#1C1C1C,#1C1C1C);
+}
+@media(max-width:600px){
+   .container{
+    min-width: 280px;
+   }
+   .contact{
+    max-height: 380px;
+    overflow: auto;
+   }
+   .input-box{
+    margin-bottom: 12px;
+    width: 100%;
+   }
+   .input-box:nth-child(2n){
+    justify-content: space-between;
+   }
+   .gender-category{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+   }
+   content::-webkit-scrollbar{
+    width: 0;
+   }
+   .card{
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+   }
+}

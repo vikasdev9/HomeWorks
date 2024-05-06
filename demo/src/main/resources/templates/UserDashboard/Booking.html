@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/UserDashboardCss/Userdashboard.css"
+      th:href="@{../css/UserDashboardCss/Userdashboard.css}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/UserDashboardCss/Bookings.css"
+      th:href="@{../css/UserDashboardCss/Bookings.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      flex
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+      integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <th:block
+      th:insert="~{UserDashboard/sidemenu ::  UserdbheaderFragment(option=${session.option})}"
+    />
+    <section style="width: 100%">
+      <h3 class="i-name">Booking Service are Processing !</h3>
+
+      <div class="board">
+        <div class="container">
+          <h1 class="heading" style="color: #9100ff">Booking Services List</h1>
+
+          <div class="box-container">
+            <div class="box" th:each="b1 : ${BookingList}">
+              <p class="ptag" style="font-weight: bold">
+                Worker Name:<span th:text="${b1.getWorkerName()}"></span>
+              </p>
+              <p class="ptag" style="font-weight: bold">
+                Service Name:<span th:text="${b1.getServicetypes()}"></span>
+              </p>
+              <p style="font-weight: bold">
+                Need Service on Days :<span th:text="${b1.getDayofBooking()}"
+                  >Friday</span
+                >
+              </p>
+              <hr class="horizontal-line" />
+              <p>User Name :<span th:text="${b1.getUserName()}"></span></p>
+              <p>
+                User Address :<span th:text="${b1.getUserAddress()}"></span>
+              </p>
+              <p>User City :<span th:text="${b1.getUserCity()}"></span></p>
+              <p>Landmark :<span th:text="${b1.getLandmarks()}"></span></p>
+              <p>
+                User Pin Code :<span th:text="${b1.getUserPinCode()}"></span>
+              </p>
+
+              <!-- <a href="#" class="btn">Accept</a>
+              <a href="#" class="btn">Decline</a> -->
+              <section class="step-wizard">
+                <ul class="step-wizard-list">
+                  <li class="step-wizard-item">
+                    <span class="progress-count">1</span>
+                    <span class="progress-label"> Sent</span>
+                  </li>
+                  <li class="step-wizard-item">
+                    <span class="progress-count">2</span>
+                    <span class="progress-label"> Recieved</span>
+                  </li>
+                  <li
+                    class="step-wizard-item"
+                    th:classappend="${b1.getStatus() == 'Accept' ? '' : 'current-item'}"
+                  >
+                    <span class="progress-count">3</span>
+                    <span
+                      class="progress-label"
+                      th:if="${b1.getStatus() == 'Pending'}"
+                      >Pending</span
+                    >
+                    <span
+                      class="progress-label"
+                      th:if="${b1.getStatus() == 'Accept'}"
+                      >Confirm</span
+                    >
+                    <span
+                      class="progress-label"
+                      th:if="${b1.getStatus() == 'Decline'}"
+                      style="color: red"
+                      >Cancel</span
+                    >
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      $("#menu-btn").click(function () {
+        $("#menu").toggleClass("active");
+      });
+    </script>
+  </body>
+</html>

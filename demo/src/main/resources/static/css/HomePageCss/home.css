@@ -1,0 +1,105 @@
+.continer-fluid {
+  background-color: aliceblue;
+}
+
+#header {
+  background-color: rgb(255, 255, 255);
+
+}
+
+.nav-item {
+  padding-left: 45px;
+  padding-right: 45px;
+  color: black;
+}
+
+#sub-header {
+  background-color: rgb(255, 255, 255);
+}
+
+.carousal-slide {
+  width: 100%;
+
+}
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#pagination {
+  padding-top: 10px;
+}
+
+.page {
+  padding-top: 10px;
+}
+
+#mid {
+  padding-top: 20px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+#left {
+  padding-left: 30px;
+}
+
+#right {
+  padding-right: 30px;
+}
+
+.col-md {
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: rgb(255, 255, 255);
+}
+
+.img-mid {
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+.row {
+  background-color: rgb(255, 255, 255);
+}
+
+.btn {
+  color: white;
+  background-color: rgb(4, 4, 4);
+  font-display: white;
+}
+
+#services {
+  background-color: rgb(255, 255, 255);
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+#level3 {
+  text-align: center;
+
+}
+
+.lefti {
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.level3-img {
+  border-radius: 20px;
+}
+
+#last {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+
+@media (min-width: 768px) {
+  .image {
+    height: 140px;
+  }
+}

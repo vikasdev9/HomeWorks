@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/Userdashboard.css" th:href="@{/css/UserDashboardCss/Userdashboard.css}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <div th:fragment="Adminside" id="Adminside">
+    <section id="menu">
+      <div class="logo">
+        <img th:src="@{../images/homework logo img.png}" alt="img" />
+        <h2>Admin Dashboard</h2>
+       <h1 style="border: 1 solid black;width: 5px;height: 1px;"></h1>
+      </div>
+      <div class="items">
+        <h2 style="margin-left: 30px;margin-bottom: 10px;">Welcome  <span  th:text="${firstName}" style="color: #9100FF;"></span></h2>
+        <ul>  
+          <!-- User Dashboard Menu -->
+         
+          <li>
+           <i class='bx bxs-dashboard' ></i><a th:href="@{/Admin}">DashBoard</a>
+          </li>
+          
+           <li>
+            <i class="bx bx-log-out"></i><a th:href="@{/home}">LogOut</a>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <section id="interface">
+      <div class="navigation">
+        <div class="n1">
+          <div>
+            <i id="menu-btn" class="fas fa-bars"></i>
+          </div>
+          <div class="search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="text" placeholder="Search" />
+          </div>
+        </div>
+
+        <div class="profile">
+          <i class="fa-regular fa-bell"></i>
+          <img th:src="@{../images/homework logo img.png}" alt="img3" />
+        </div>
+      </div>
+  </div>
+  </section>
+  <script>
+    $("#menu-btn").click(function () {
+      $("#menu").toggleClass("active");
+    });
+  </script>
+</body>
+
+</html>
